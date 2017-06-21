@@ -1,0 +1,44 @@
+===========================================================  
+  
+  /|| ||\ | ||  Mini-radar - version 0.0.1  
+ /_|| ||_| \||  https://github.com/phult  
+  
+[Mon Jun 19 2017 22:12:15 GMT+0700 (+07)] [error] Application: uncaughtException: MonitorController is not defined  
+[Mon Jun 19 2017 22:12:15 GMT+0700 (+07)] [error] Application: ReferenceError: MonitorController is not defined
+    at Object.<anonymous> (/Users/admin/Documents/projects/me/mini-radar/controllers/monitor-controller.js:1:80)
+    at Module._compile (module.js:434:26)
+    at Object.Module._extensions..js (module.js:452:10)
+    at Module.load (module.js:355:32)
+    at Function.Module._load (module.js:310:12)
+    at Module.require (module.js:365:17)
+    at require (module.js:384:17)
+    at /Users/admin/Documents/projects/me/mini-radar/core/loader/auto-loader.js:49:33
+    at Array.forEach (native)
+    at AutoLoader.loadDirectory (/Users/admin/Documents/projects/me/mini-radar/core/loader/auto-loader.js:46:20)  
+===========================================================  
+  
+  /|| ||\ | ||  Mini-radar - version 0.0.1  
+ /_|| ||_| \||  https://github.com/phult  
+  
+[Mon Jun 19 2017 22:12:47 GMT+0700 (+07)] [error] Application: uncaughtException: Cannot find module '/Users/admin/Documents/projects/me/mini-radar/utils/network-util'  
+[Mon Jun 19 2017 22:12:47 GMT+0700 (+07)] [error] Application: Error: Cannot find module '/Users/admin/Documents/projects/me/mini-radar/utils/network-util'
+    at Function.Module._resolveFilename (module.js:336:15)
+    at Function.Module._load (module.js:286:25)
+    at Module.require (module.js:365:17)
+    at require (module.js:384:17)
+    at Object.<anonymous> (/Users/admin/Documents/projects/me/mini-radar/controllers/monitor-controller.js:5:19)
+    at Module._compile (module.js:434:26)
+    at Object.Module._extensions..js (module.js:452:10)
+    at Module.load (module.js:355:32)
+    at Function.Module._load (module.js:310:12)
+    at Module.require (module.js:365:17)  
+===========================================================  
+  
+  /|| ||\ | ||  Mini-radar - version 0.0.1  
+ /_|| ||_| \||  https://github.com/phult  
+  
+Start time:  19/06/2017 22:13:4  
+Port:        8888  
+Local IP:    192.168.0.103  
+SSL mode:    false  
+Debug mode:  true  

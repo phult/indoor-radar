@@ -1,0 +1,37 @@
+<div class="col-md-12">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">Avaiable devices</h3>
+            <div class="box-tools pull-right">
+                <img ng-show="isScanning == true" class="fa" src="/images/loading.gif"/>
+                <button ng-click="scan()" ng-hide="isScanning == true" type="button" class="btn btn-box-tool"><i class="fa fa-refresh"></i></button>
+            </div>
+        </div>
+        <div class="box-body">
+            <ul class="products-list product-list-in-box">
+                <li class="item" ng-repeat="device in devices">
+                    <div class="product-img">
+                        <img src="/images/hub.png" alt="Product Image">
+                    </div>
+                    <div class="product-info" style="margin-top: 5px">
+                        <a href="javascript:void(0)" class="product-title">
+                            {{device.name}}
+                            <img ng-show="device.isConnecting == true" class="fa pull-right" src="/images/loading.gif"/>
+                            <span ng-click="connect(device)" ng-hide="device.isConnecting == true || device.isConnectFail == true" class="label label-success pull-right">Connect</span>
+                            <span ng-click="connect(device)" ng-show="device.isConnecting != true && device.isConnectFail == true" class="label label-warning pull-right">Cannot connect to device. Try again?</span>
+                        </a>
+                        <span class="product-description">
+                            {{device.address}}
+                        </span>
+                    </div>
+                </li>
+                <li ng-show="isScanning == true && devices != null && devices.length == 0">
+                    <i>Scanning devices...</i>
+                </li>
+                <li ng-show="isScanning != true && (devices == null || devices.length == 0)">
+                    <i>Cannot found any device.</i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

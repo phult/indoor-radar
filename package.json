@@ -1,16 +1,16 @@
 {
-    "name": "Quicksort.io",
-    "description": "A lightweight node.js framework for http and socket.io server application.",
-    "homepage": "https://github.com/megaads-vn",
-    "author": "Megaads <info.megaads@gmail.com>",
-    "keywords": ["framework", "http", "socket.io", "mvc", "lightweight", "server", "engine", "real time", "notification", "chat", "rest"],
+    "name": "Mini-radar",
+    "description": "A mini radar system, written in Arduino, Node.js and HTML5 Canvas",
+    "homepage": "https://github.com/phult",
+    "author": "Phu Luong <phult.contact@gmail.com>",
+    "keywords": ["radar","arduino","canvas"],
     "license": "MIT",
-    "version": "0.7.1",
+    "version": "0.0.1",
     "main": "app.js",
     "contributors": [],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/megaads-vn/quicksort.io"
+        "url": "git+https://github.com/phult/mini-radar.git"
     },
     "dependencies": {
         "socket.io": "1.*",

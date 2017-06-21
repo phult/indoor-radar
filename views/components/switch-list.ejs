@@ -1,0 +1,23 @@
+<div class="row" ng-repeat="hub in hubs">
+    <section class="content-header" style="margin-bottom: 8px">
+      <h1>
+        {{hub.name}}
+        <small>{{hub.room}}</small>
+      </h1>
+    </section>
+    <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="switch in switches | filter:{ hubAddress: hub.address }">
+        <div class="info-box {{getSwitchColor(switch)}}">
+            <span ng-click="changeState(switch)" class="info-box-icon js-command"><i class="fa {{getSwitchIcon(switch)}}"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-number">{{switch.name}}</span>
+                <span class="info-box-text">{{switch.hubName}}</span>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 0%"></div>
+                </div>
+                <span class="label js-command datepicker" ng-click="setTimerOn(switch)" data-toggle="modal" data-target="#switchSetTimeDialog"><i class="fa fa-toggle-on"></i> {{switch.timerOn==null?'Set time on': switch.timerOn}}</span>
+                <span class="label js-command datepicker" ng-click="setTimerOff(switch)" data-toggle="modal" data-target="#switchSetTimeDialog"><i class="fa fa-toggle-off"></i> {{switch.timerOff==null?'Set time off': switch.timerOff}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('switch-set-time-dialog') %>
