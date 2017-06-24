@@ -22,61 +22,7 @@
         <script>
             var host = '<%- host %>';
             var port = <%- port %>;
-            var scope = 100;
-            var rootX = 0;
-            var rootY = 0;
-            var canvas = null;
-            var context = null;
-            var objectMap = [];
-            $(document).ready(function () {
-                canvasWidth = $("canvas").width();
-                canvasHeight = $("canvas").height();
-                canvas = document.getElementById("canvas");
-                rootX = canvas.width / 2;
-                rootY = canvas.height / 2;
-                context = canvas.getContext("2d");
-                drawScene();
-                var angle = 0;
-                setInterval(function(){
-                    scan(angle, angle);
-                    angle++;
-                }, 200);
-            });
-            function drawScene() {
-                context.strokeStyle = "green";
-                for (var i = scope; i >= 0; i = i - 20) {
-                    context.beginPath();
-                    context.arc(rootX, rootY, i, 0, Math.PI * 2, false);
-                    context.stroke();
-                }
-            }
-            function scan(angle, objectDistance) {
-                objectMap[angle] = objectDistance;
-                context.clearRect(0, 0, canvas.width, canvas.height);
-                drawScene();
-                context.save();
-                context.translate(rootX,rootY);
-                context.rotate(angle * Math.PI / 180);
-                context.lineWidth = 6;
-                context.moveTo(0, 0);
-                context.lineTo(0, scope);
-                context.stroke();
-                context.restore();
-                drawObjectMap();
-            }
-            function drawObjectMap() {
-                for (var angle in objectMap) {
-                    context.save();
-                    context.translate(rootX,rootY);
-                    context.rotate(angle * Math.PI / 180);
-                    var objectDistance = objectMap[angle];
-                    if (objectDistance >= 0 && objectDistance <= scope) {
-                        context.fillStyle = "red";
-                        context.fillRect(-3, objectDistance, 6, 2);
-                    }
-                    context.restore();
-                }
-            }
+
         </script>
         <script src="/js/mini-radar-app.js?v=<%- version %>"></script>
         <script src="/js/ng-base-controller.js?v=<%- version %>"></script>
@@ -91,7 +37,7 @@
     <body class="hold-transition skin-blue" ng-app="miniRadarApp">
         <div class="wrapper">
             <!-- Content Wrapper. Contains page content -->
-            <div>
+            <div ng-controller="MonitorController">
                 <canvas id="canvas" width="900" height="500" tabindex="1" style="float: left;vertical-align: top;border: 1px solid black;cursor: crosshair" ></canvas>
             </div>
             <!-- /.content-wrapper -->
