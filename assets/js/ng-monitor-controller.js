@@ -14,7 +14,7 @@ centeryApp.controller('MonitorController', function ($scope, $rootScope, $http, 
         rootX = canvas.width / 2;
         rootY = canvas.height / 2;
         context = canvas.getContext("2d");
-        self.drawScene();        
+        self.drawScene();
     });
     this.initialize = function () {
         this.__proto__.initialize();
@@ -53,7 +53,8 @@ centeryApp.controller('MonitorController', function ($scope, $rootScope, $http, 
             var objectDistance = objectMap[angle];
             if (objectDistance >= 0 && objectDistance <= scope) {
                 context.fillStyle = "red";
-                context.fillRect(-3, objectDistance, 6, 2);
+                //context.fillRect(-0, objectDistance, 1, 1);
+                context.fillRect(-2,objectDistance,5,5);
             }
             context.restore();
         }
